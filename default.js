@@ -18,3 +18,31 @@ function onLoad() {
   ctx.strokeStyle = 'black';
   ctx.strokeRect(0, 0, mazeHeight, mazeWidth);
 }
+
+class mazeCell {
+
+  var col;
+  var eastWall;
+  var northWall;
+  var row;
+  var southWall;
+  var visited;
+  var westWall;
+
+  constructor(col, row) {
+    this.col = col;
+    this.row = row;
+
+    this.eastWall = true;
+    this.northWall = true;
+    this.southWall = true;
+    this.westWall = true;
+
+    this.visited = true;
+  }
+
+}
+
+class maze {
+  
+}

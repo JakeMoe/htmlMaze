@@ -3,13 +3,9 @@
   text-align: center;
 }
 
-canvas {
-  text-align: center;
-}
-
 #footer {
-  bottom: 0;
-  left: 0;
+  bottom: 10px;
+  left: 10px;
   position: absolute;
-  right: 0;
+  right: 10px;
 }
