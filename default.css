@@ -6,3 +6,10 @@
 canvas {
   text-align: center;
 }
+
+#footer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
