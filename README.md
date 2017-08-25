@@ -10,3 +10,5 @@ A simple maze game in HTML5 / JavaScript
   * Added CSS formatting, moved README.md to correct location
 * 0.3 - John Moe - 25 August 2017
   * Added initial classes to JavaScript
+* 0.4 - John Moe - 26 August 2017
+  * Filled out Maze class, added end location
