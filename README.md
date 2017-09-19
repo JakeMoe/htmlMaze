@@ -14,3 +14,5 @@ A simple maze game in HTML5 / JavaScript
   * Filled out Maze class, added end location
 * 0.5 - John Moe - 19 September 2017
   * Fixed keyboard event listener, began Player class
+* 0.6 - John Moe - 20 September 2017
+  * Finished up player, began settings

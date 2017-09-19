@@ -152,9 +152,12 @@ class Maze {
   redraw() {
 
     ctx.fillStyle = this.backgroundColor;
-    ctx.strokeStyle = this.mazeColor;
-
     ctx.fillRect(0, 0, mazeHeight, mazeWidth);
+
+    ctx.fillStyle = this.endColor;
+    ctx.fillRect((this.cols - 1) * this.cellSize, (this.rows - 1) * this.cellSize, this.cellSize, this.cellSize);
+
+    ctx.strokeStyle = this.mazeColor;
     ctx.strokeRect(0, 0, mazeHeight, mazeWidth);
 
     for (let col = 0; col < this.cols; col++) {
@@ -187,29 +190,45 @@ class Maze {
     }
 
     ctx.fillStyle = this.playerColor;
-    ctx.fillRect((player.row * this.cellSize) + 2, (player.col * this.cellSize) + 2, this.cellSize - 4, this.cellSize - 4);
-
-    ctx.fillStyle = this.endColor;
-    ctx.fillRect((this.cols - 1) * this.cellSize, (this.rows - 1) * this.cellSize, this.cellSize, this.cellSize);
+    ctx.fillRect((player.col * this.cellSize) + 2, (player.row * this.cellSize) + 2, this.cellSize - 4, this.cellSize - 4);
 
   }
 
 }
 
-function onKeyPress(event) {
+function onClick(event) {
+  maze.cols = document.getElementById("cols").value;
+  maze.rows = document.getElementById("rows").value;
+  maze.generate();
+}
+
+function onKeyDown(event) {
   switch (event.keyCode) {
-    case 97:
-      if (player.col > 0) {
+    case 37:
+    case 65:
+      if (!maze.cells[player.col][player.row].westWall) {
         player.col -= 1;
       }
       break;
-    case 100:
-      if (player.col < this.cols) {
+    case 39:
+    case 68:
+      if (!maze.cells[player.col][player.row].eastWall) {
         player.col += 1;
       }
       break;
+    case 40:
+    case 83:
+      if (!maze.cells[player.col][player.row].southWall) {
+        player.row += 1;
+      }
+      break;
+    case 38:
+    case 87:
+      if (!maze.cells[player.col][player.row].northWall) {
+        player.row -= 1;
+      }
+      break;
     default:
-      alert("Key" + event.keyCode + " pressed");
       break;
   }
   maze.redraw();
@@ -220,9 +239,10 @@ function onLoad() {
   canvas = document.getElementById("mainForm");
   ctx = canvas.getContext("2d");
 
-  document.addEventListener("keypress", onKeyPress);
-
   player = new Player();
   maze = new Maze(20, 20, 25);
+
+  document.addEventListener("keydown", onKeyDown);
+  document.getElementById("generate").addEventListener("click", onClick);
 
 }

@@ -3,9 +3,19 @@
   text-align: center;
 }
 
+table, tbody, tr, td {
+  text-align: left;
+}
+
 #footer {
-  bottom: 10px;
-  left: 10px;
+  bottom: 25px;
+  left: 25px;
   position: absolute;
-  right: 10px;
+  right: 25px;
+}
+
+#settings {
+  position: absolute;
+  right: 25px;
+  top: 25px;
 }
