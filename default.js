@@ -3,6 +3,16 @@ let canvas;
 let maze;
 let mazeHeight;
 let mazeWidth;
+let player;
+
+class Player {
+
+  constructor() {
+    this.col = 0;
+    this.row = 0;
+  }
+
+}
 
 class MazeCell {
 
@@ -117,7 +127,6 @@ class Maze {
       }
     }
 
-
     this.redraw();
 
   }
@@ -148,9 +157,6 @@ class Maze {
     ctx.fillRect(0, 0, mazeHeight, mazeWidth);
     ctx.strokeRect(0, 0, mazeHeight, mazeWidth);
 
-    ctx.fillStyle = this.endColor;
-    ctx.fillRect((this.cols - 1) * this.cellSize, (this.rows - 1) * this.cellSize, this.cellSize, this.cellSize);
-
     for (let col = 0; col < this.cols; col++) {
       for (let row = 0; row < this.rows; row++) {
         if (this.cells[col][row].eastWall) {
@@ -180,12 +186,33 @@ class Maze {
       }
     }
 
+    ctx.fillStyle = this.playerColor;
+    ctx.fillRect((player.row * this.cellSize) + 2, (player.col * this.cellSize) + 2, this.cellSize - 4, this.cellSize - 4);
+
+    ctx.fillStyle = this.endColor;
+    ctx.fillRect((this.cols - 1) * this.cellSize, (this.rows - 1) * this.cellSize, this.cellSize, this.cellSize);
+
   }
 
 }
 
-function onKeyPress() {
-  alert("Key pressed");
+function onKeyPress(event) {
+  switch (event.keyCode) {
+    case 97:
+      if (player.col > 0) {
+        player.col -= 1;
+      }
+      break;
+    case 100:
+      if (player.col < this.cols) {
+        player.col += 1;
+      }
+      break;
+    default:
+      alert("Key" + event.keyCode + " pressed");
+      break;
+  }
+  maze.redraw();
 }
 
 function onLoad() {
@@ -193,10 +220,9 @@ function onLoad() {
   canvas = document.getElementById("mainForm");
   ctx = canvas.getContext("2d");
 
-//  canvas.addEventListener("keypress", onKeyPress());
+  document.addEventListener("keypress", onKeyPress);
 
+  player = new Player();
   maze = new Maze(20, 20, 25);
 
 }
-
-//document.addEventListener("load", onLoad());
