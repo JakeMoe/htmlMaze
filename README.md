@@ -2,6 +2,8 @@
 
 A simple maze game in HTML5 / JavaScript
 
+A live version can be played here: https://jakemoe.github.io/htmlMaze/
+
 ### Revision History
 
 * 0.1 - John Moe - 24 August 2017
