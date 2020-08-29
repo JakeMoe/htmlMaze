@@ -16,3 +16,6 @@ A simple maze game in HTML5 / JavaScript
   * Fixed keyboard event listener, began Player class
 * 0.6 - John Moe - 20 September 2017
   * Finished up player, began settings
+* 0.7 - John Moe - 29 August 2020
+  * Added GPL v3 license that had been forgotten
+  * Renamed pages from default.* to index.* to match modern standards
