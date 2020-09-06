@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap');
+
+* {
+/*  border: solid black 1px; */
+  box-sizing: border-box;
+  font-family: 'Text Me One', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    'header header'
+    'canvas cols'
+    'canvas rows'
+    'canvas generate'
+    'canvas controls'
+    'footer footer';
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content max-content max-content max-content max-content max-content;
+  height: max-content;
+  width: max-content;
+}
+
+header {
+  grid-area: header;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+canvas {
+  grid-area: canvas;
+}
+
+.cols {
+  grid-area: cols;
+}
+
+.rows {
+  grid-area: rows;
+}
+
+.generate {
+  grid-area: generate;
+}
+
+.controls {
+  display: grid;
+  grid-template-areas:
+    '. up .'
+    'left . right'
+    '. down .';
+    grid-template-columns: max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content;
+}
+
+.up, .right, .down, .left {
+  background-color: grey;
+  height: 25px;
+  width: 25px;
+}
+
+.up {
+  grid-area: up;
+}
+
+.right {
+  grid-area: right;
+}
+
+.down {
+  grid-area: down;
+}
+
+.left {
+  grid-area: left;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+footer > a:hover {
+  background-color: lightgrey;
+}
+
+@media (max-width: 640px) {
+  body {
+    grid-template-areas:
+      'header'
+      'canvas'
+      'cols'
+      'rows'
+      'generate'
+      'controls'
+      'footer';
+    grid-template-columns: max-content;
+    grid-template-rows: max-content max-content max-content max-content max-content max-content max-content;
+  }
+}

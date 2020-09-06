@@ -1,20 +1,3 @@
-/*
- * This file is part of htmlMaze	.
- *
- * htmlMaze is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * htmlMaze is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.
- */
-
 let ctx;
 let canvas;
 let maze;
@@ -25,6 +8,10 @@ let player;
 class Player {
 
   constructor() {
+    this.reset();
+  }
+
+  reset() {
     this.col = 0;
     this.row = 0;
   }
@@ -214,6 +201,7 @@ class Maze {
 }
 
 function onClick(event) {
+  player.reset();
   maze.cols = document.getElementById("cols").value;
   maze.rows = document.getElementById("rows").value;
   maze.generate();

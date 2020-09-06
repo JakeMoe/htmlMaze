@@ -21,3 +21,6 @@ A live version can be played here: https://jakemoe.github.io/htmlMaze/
 * 0.7 - John Moe - 29 August 2020
   * Added GPL v3 license that had been forgotten
   * Renamed pages from default.* to index.* to match modern standards
+* 0.8 - John Moe - 4 September 2020
+  * Fixed license text in files
+  * 
