@@ -207,6 +207,34 @@ function onClick(event) {
   maze.generate();
 }
 
+function onControlClick(event) {
+  switch (event.target.id) {
+    case 'left':
+      if (!maze.cells[player.col][player.row].westWall) {
+        player.col -= 1;
+      }
+      break;
+    case 'right':
+      if (!maze.cells[player.col][player.row].eastWall) {
+        player.col += 1;
+      }
+      break;
+    case 'down':
+      if (!maze.cells[player.col][player.row].southWall) {
+        player.row += 1;
+      }
+      break;
+    case 'up':
+      if (!maze.cells[player.col][player.row].northWall) {
+        player.row -= 1;
+      }
+      break;
+    default:
+      break;
+  }
+  maze.redraw();
+}
+
 function onKeyDown(event) {
   switch (event.keyCode) {
     case 37:
@@ -241,13 +269,17 @@ function onKeyDown(event) {
 
 function onLoad() {
 
-  canvas = document.getElementById("mainForm");
-  ctx = canvas.getContext("2d");
+  canvas = document.getElementById('mainForm');
+  ctx = canvas.getContext('2d');
 
   player = new Player();
   maze = new Maze(20, 20, 25);
 
-  document.addEventListener("keydown", onKeyDown);
-  document.getElementById("generate").addEventListener("click", onClick);
+  document.addEventListener('keydown', onKeyDown);
+  document.getElementById('generate').addEventListener('click', onClick);
+  document.getElementById('up').addEventListener('click', onControlClick);
+  document.getElementById('right').addEventListener('click', onControlClick);
+  document.getElementById('down').addEventListener('click', onControlClick);
+  document.getElementById('left').addEventListener('click', onControlClick);
 
 }

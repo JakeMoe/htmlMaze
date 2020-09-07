@@ -8,19 +8,21 @@
     <title>htmlMaze</title>
   </head>
   <body onload='onLoad();'>
-      <header>htmlMaze</header>
-      <canvas id='mainForm'></canvas>
-      <div class='cols'><label for='cols'>Columns:</label>
-                        <input id='cols' type='text' size='5' value='20'></div>
-      <div class='rows'><label for='rows'>Rows:</label>
-                        <input id='rows' type='text' size='5' value='20'></div>
-      <div class='generate'><input id='generate' type='button' value='Generate'></div>
-      <div class='controls'>
-        <div class='up'></div>
-        <div class='right'></div>
-        <div class='down'></div>
-        <div class='left'></div>
-      </div>
-      <footer>&copy; 2017 <a href='mailto:JakesAddress@gmail.com?Subject=htmlMaze'>Jake (John) Moe</a></footer>
+    <header>htmlMaze</header>
+    <canvas id='mainForm'></canvas>
+    <div class='settings'>
+      <label for='cols'>Columns:</label>
+      <input id='cols' type='text' size='5' value='20'><br>
+      <label for='rows'>Rows:</label>
+      <input id='rows' type='text' size='5' value='20'><br>
+      <input id='generate' type='button' value='Generate'>
+    </div>
+    <div class='controls'>
+      <div id='up' class='up'>&#8679;</div>
+      <div id='right' class='right'>&#8680;</div>
+      <div id='down' class='down'>&#8681;</div>
+      <div id='left' class='left'>&#8678;</div>
+    </div>
+    <footer>&copy; 2017 <a href='mailto:JakesAddress@gmail.com?Subject=htmlMaze'>Jake (John) Moe</a></footer>
   </body>
 </html>

@@ -3,6 +3,7 @@
 A simple maze game in HTML5 / JavaScript
 
 A live version can be played here: https://jakemoe.github.io/htmlMaze/
+Updated version can be played here: https://jakemoe.github.io/htmlMaze/index2.html
 
 ### Revision History
 
@@ -23,4 +24,4 @@ A live version can be played here: https://jakemoe.github.io/htmlMaze/
   * Renamed pages from default.* to index.* to match modern standards
 * 0.8 - John Moe - 4 September 2020
   * Fixed license text in files
-  * 
+  * Created index2.html to update with new HTML/CSS/JS I've learned
